@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<select name="action" id="">
+    <option value="test">test</option>
+    <option value="test1">test1</option>
+    <option value="test2">test2</option>
+</select>
+<h1>Articles</h1>
+<img src="{% static img_path %}" alt="">
+<a href="articles/add/">Create article</a>
+<br>
+{% for article in articles %}
+    <div>
+        <h5>{{ article.title }}</h5>
+        <p>{{ article.content }}</p>
+        <p>{{ article.author }}</p>
+    </div>
+{% endfor %}
+
+{% if 2 == 0 %}
+    <h1>True</h1>
+{% else %}
+    <h1>False</h1>
+{% endif %}
+
+{{ articles.1 }}
+</body>
+</html>
